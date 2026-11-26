@@ -1,0 +1,23 @@
+[project]
+name = "ticket-master"
+version = "0.1.0"
+description = "A personal, Jira-style ticket system that AI tools can use through MCP."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+tm = "ticket_master.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["ticket_master"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
